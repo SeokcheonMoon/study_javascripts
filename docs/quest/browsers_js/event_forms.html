@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+    <!-- Latest compiled and minified CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Customer CSS common.css -->
+    <link rel="stylesheet" href="../css/commons.css">
+
+</head>
+
+<body>
+    <nav>nav</nav>
+    <main>
+        <div>radio buttons</div>
+        <div>
+            <div>
+                연구소 이름 : <input type="text" name="lab_name" value="yojulab" id="">
+            </div>
+            <div>
+                <div> - 희망 사항 선택 - </div>
+                <div id="element">
+                    <div class="form-check">
+                        <label class="form-check-label" for="doglang"> 강아지 말 희망 </label>
+                        <input class="form-check-input" type="radio" name="hope_lang" value="dog_lang" id="">
+                    </div>
+                    <div class="form-check">
+                        <label class="form-check-label" for="catlang"> 고양이 말 희망 </label>
+                        <input class="form-check-input" type="radio" name="hope_lang" value="cat_lang" id="">
+                    </div>
+                </div>
+            </div>
+            <div>
+                <button id="tag_enable" type="submit">tag_enable</button>
+                <button id="tag_disable" type="reset">tag_disable</button>
+            </div>
+        </div>
+        <hr>
+
+        <!-- apply form control with row and col-->
+        <div>apply form control with row and col</div>
+        <div class="row">
+            <div class="col-3">
+                <input type="text" class="form-control-plaintext" placeholder="Email :" id="">
+            </div>
+            <div class="col-4">
+                <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+            </div>
+            <div class="col-5">
+                <label for="carcompanyname">Choose Car Company : </label>
+                <select class="form-select" name="car_company_name" id="carcompanyname">
+                    <option value="CAR_01">볼보</option>
+                    <option value="CAR_02" selected>현대</option>
+                    <option value="CAR_03">Audi</option>
+                    <option value="CAR_04">포르쉐</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- select menu -->
+        <div>
+            <label for="carcompanyname">Choose Car Company : </label>
+            <select class="form-select" name="car_company_name" id="carcompanyname">
+                <option value="CAR_01">볼보</option>
+                <option value="CAR_02" selected>현대</option>
+                <option value="CAR_03">Audi</option>
+                <option value="CAR_04">포르쉐</option>
+            </select>
+        </div>
+        <hr>
+        <!-- apply form control with row and col-->
+        <div>apply form control with row and col</div>
+        <div class="row">
+            <div class="col-4">
+                <input type="text" class="form-control-plaintext" placeholder="Email :" id="">
+            </div>
+            <div class="col-8">
+                <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+            </div>
+        </div>
+
+
+        <!-- apply form control -->
+        <div>apply form control</div>
+        <label for="email">Email:</label>
+        <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+    </main>
+    <footer>footer</footer>
+</body>
+<!-- Latest compiled JavaScript -->
+<script>
+    // div에 click event
+    tag_enable = document.querySelector("#tag_enable");
+    tag_enable.addEventListener("click", (events) => {
+        console.log("tag_enable !");
+        // event 발생 시 특정 tag 입력 역할
+        let element = document.querySelector('#element');
+        enable = '\n<div class="form-check">\n<label class="form-check-label" for="doglang"> 강아지 말 희망 </label>\n<input class="form-check-input" type="radio" name="hope_lang" value="dog_lang" id="">\n</div>\n<div class="form-check">\n<label class="form-check-label" for="catlang"> 고양이 말 희망 </label>\n<input class="form-check-input" type="radio" name="hope_lang" value="cat_lang" id="">\n</div>\n';
+        element.innerHTML = enable;
+    });
+
+    tag_disable = document.querySelector("#tag_disable");
+    tag_disable.addEventListener("click", (events) => {
+        console.log("tag_disable !");
+        // event 발생 시 특정 tag 입력 역할
+        let element = document.querySelector('#element');
+        disable = ``;
+        element.innerHTML = disable;
+    });
+
+    // // event keydown
+    // // event 대상 tag 선택 with id
+    // event_keydown = document.querySelector("#event_keydown")
+    // // event 기다리게 추가
+    // event_keydown.addEventListener('keydown', (event) => {
+    //     console.log(`now key down code : ${event.code}`);
+    //     if (event.code == 'Enter') {                                                     // keydown할 겨우 넘어온 event에서 코드 확인
+    //         console.log(`key down : ${event.code}`);
+    //     }
+    // })
+
+</script>
+
+</html>
